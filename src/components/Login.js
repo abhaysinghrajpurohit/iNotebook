@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {useHistory} from 'react-router-dom';
 
 const Login = (props) => {
-
+  const host=process.env.REACT_APP_HOST_URL;
 const [credentials, setCredentials] = useState({email:"",password:""})
 
 let history=useHistory();
@@ -11,7 +11,7 @@ let history=useHistory();
   const handleSubmit = async (e) => {
         e.preventDefault(); //prevent from reloading
 
-        const response=await fetch(`http://localhost:5000/api/auth/login`,{
+        const response=await fetch(`${host}/api/auth/login`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',

@@ -22,4 +22,6 @@ app.get('/', (req, res) => {
   res.send('Success server started!')
 })
 
-app.listen(PORT)
+app.listen(PORT,()=>{
+  console.log("Server Started")
+})
